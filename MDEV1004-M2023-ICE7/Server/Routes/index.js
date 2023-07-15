@@ -19,13 +19,13 @@ router.post('/add', function (req, res, next) {
     (0, movie_1.AddMovie)(req, res, next);
 });
 router.put('/update/:id', function (req, res, next) {
-    (0, movie_1.updateMovie)(req, res, next);
+    (0, movie_1.UpdateMovie)(req, res, next);
 });
 router.delete('/delete/:id', function (req, res, next) {
     (0, movie_1.DeleteMovie)(req, res, next);
 });
 router.post('/register', function (req, res, next) {
-    (0, movie_1.ProcessRegister)(req, res, next);
+    (0, movie_1.ProcessRegistration)(req, res, next);
 });
 router.post('/login', function (req, res, next) {
     (0, movie_1.ProcessLogin)(req, res, next);
