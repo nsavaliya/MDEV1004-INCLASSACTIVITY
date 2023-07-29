@@ -1,7 +1,7 @@
 {
-  "name": "mdev1004-m2023-ice8",
+  "name": "mdev1004-m2023-ice9",
   "version": "0.0.8",
-  "description": "this is a demo project for MDEV1004 - ICE 8 - in the summer 2023 semester at Georgian",
+  "description": "this is a demo project for MDEV1004 - ICE 9 - in the summer 2023 semester at Georgian",
   "author": "Namrata Savaliya",
   "engines": {
     "node": "20.2.0",
