@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = require("mongoose");
-let movieSchema = new mongoose_1.Schema({
+var mongoose_1 = require("mongoose");
+// Movie Schema - defines the structure of a movie using the Movie Interface
+var movieSchema = new mongoose_1.Schema({
     movieID: String,
     title: String,
     studio: String,
@@ -15,6 +16,5 @@ let movieSchema = new mongoose_1.Schema({
     mpaRating: String,
     criticsRating: Number
 });
-let Movie = (0, mongoose_1.model)('Movie', movieSchema);
+var Movie = (0, mongoose_1.model)('Movie', movieSchema);
 exports.default = Movie;
-//# sourceMappingURL=movie.js.map

@@ -1,27 +1,28 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const cookie_parser_1 = __importDefault(require("cookie-parser"));
-const morgan_1 = __importDefault(require("morgan"));
+// modules for express server
+var express_1 = require("express");
+var cookie_parser_1 = require("cookie-parser");
+var morgan_1 = require("morgan");
+// enable .env file
 require("dotenv/config");
-const mongoose_1 = __importDefault(require("mongoose"));
-const db_1 = __importDefault(require("./db"));
+// Database modules
+var mongoose_1 = require("mongoose");
+var db_1 = require("./db");
 mongoose_1.default.connect(db_1.default.localURI);
-mongoose_1.default.connection.on('connected', () => {
-    console.log(`Connected to MongoDB`);
+// DB Connection Events
+mongoose_1.default.connection.on('connected', function () {
+    console.log("Connected to MongoDB");
 });
-mongoose_1.default.connection.on('disconnected', () => {
+mongoose_1.default.connection.on('disconnected', function () {
     console.log('Disconnected from MongoDB');
 });
-const index_1 = __importDefault(require("../Routes/index"));
-let app = (0, express_1.default)();
+var index_1 = require("../Routes/index");
+var app = (0, express_1.default)();
+// middleware modules
 app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use((0, cookie_parser_1.default)());
 app.use('/api/', index_1.default);
 exports.default = app;
-//# sourceMappingURL=app.js.map
